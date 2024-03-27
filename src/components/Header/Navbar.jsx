@@ -6,14 +6,14 @@ const Navbar = () => {
       <li>
         <NavLink to="/"
         className={({ isActive }) =>
-        isActive ? "active btn btn-outline btn-success mr-2" : "btn btn-ghost mr-2"
+        isActive ? "active btn btn-outline text-[#23BE0A]  mr-2" : "btn btn-ghost mr-2"
       }
         >Home</NavLink>
       </li>
       <li>
         <NavLink to="/list"
         className={({ isActive }) =>
-        isActive ? "active btn btn-outline btn-success mr-2" : "btn btn-ghost mr-2"
+        isActive ? "active btn btn-outline text-[#23BE0A]  mr-2" : "btn btn-ghost mr-2"
       }
       >Listed Books</NavLink>
       </li>
@@ -21,7 +21,7 @@ const Navbar = () => {
         <NavLink
           to="/read"
           className={({ isActive }) =>
-            isActive ? "active btn btn-outline btn-success mr-2" : "btn btn-ghost mr-2"
+            isActive ? "active btn btn-outline text-[#23BE0A]  mr-2" : "btn btn-ghost mr-2"
           }
         >
           Pages To Read
@@ -29,12 +29,12 @@ const Navbar = () => {
       </li>
       <li>
         <NavLink to="/newbooks" className={({ isActive }) =>
-            isActive ? "active btn btn-outline btn-success mr-2" : "btn btn-ghost mr-2"
+            isActive ? "active btn btn-outline text-[#23BE0A]  mr-2" : "btn btn-ghost mr-2"
           }>Coming Soon</NavLink>
       </li>
       <li>
         <NavLink to="/about" className={({ isActive }) =>
-            isActive ? "active btn btn-outline btn-success mr-2" : "btn btn-ghost mr-2"
+            isActive ? "active btn btn-outline text-[#23BE0A]  mr-2" : "btn btn-ghost mr-2"
           }>About</NavLink>
       </li>
     </>

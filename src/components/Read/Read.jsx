@@ -62,7 +62,7 @@ const TriangleBar = (props) => {
 };
 const Read = () => {
     return (
-        <div style={{ width: '100%', height: 500 }}> 
+        <div className='bg-base-200 rounded-lg py-10' style={{ width: '100%', height: 700 }}> 
             <ResponsiveContainer>
             <BarChart
       width={1000}
