@@ -73,10 +73,10 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
-        <button className="btn bg-[#23BE0A] text-white lg:text-xl px-5 rounded-lg mr-4">
+        <button className="btn bg-[#23BE0A] text-white lg:text-xl lg:px-5 rounded-lg mr-4">
           Sign In
         </button>
-        <button className="btn bg-[#59C6D2] text-white lg:text-xl px-5 rounded-lg">
+        <button className="btn bg-[#59C6D2] text-white lg:text-xl lg:px-5 rounded-lg">
           Sign Up
         </button>
       </div>
