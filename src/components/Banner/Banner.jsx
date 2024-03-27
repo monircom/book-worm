@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import banner from '/images/banner.png'
 
 const Banner = () => {
@@ -13,10 +14,11 @@ const Banner = () => {
             
 
             <div>
+                <Link to="/list">
               <button className="btn bg-[#23BE0A] text-white lg:text-xl px-8 rounded-lg mr-6">
                 View The List
               </button>
-             
+              </Link>
             </div>
           </div>
           <div className='flex items-center justify-center lg:mt-[80px] lg:mr-[120px] lg:w-1/4 '>
