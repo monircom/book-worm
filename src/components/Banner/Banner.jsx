@@ -2,7 +2,7 @@
 const Banner = () => {
     return (
         <div>
-            <div className="container mx-auto mb-20">
+            <div>
                 <div className="bg-[#12132D]  rounded-[32px] lg:min-h-[550px]"
                 
                 >
