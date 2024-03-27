@@ -9,7 +9,40 @@ const BookDetails = () => {
     const idInt = parseInt(id);
     const book = books.find((book) => book.bookId === idInt);
     const {tags} = book;
-    const notify = () => toast("Wow so easy!");
+
+    const handleData = () => {
+      const savedData = JSON.parse(localStorage.getItem("reads")) || [];
+      const isExist = savedData.find((item) => item.bookId == book.bookId);
+      if(isExist){
+        toast.error("Book Already Added")
+      }else{
+        savedData.push(book);
+        const localValue = JSON.stringify(savedData);
+        localStorage.setItem("reads",localValue);
+        toast.success("Book Added To Read Successfully");
+      }
+    };
+
+    const handleWishlist = () =>{
+      const savedData = JSON.parse(localStorage.getItem("reads")) || [];
+      const isExist = savedData.find((item) => item.bookId == book.bookId);
+      if(isExist){
+        toast.error("Book Already In Reading List")
+      }else{
+        const savedWishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+        const isWishExist = savedWishlist.find((item) => item.bookId == book.bookId);
+          if(isWishExist){
+            toast.error("Book Already In Wishlist")
+          }
+          else{
+            savedWishlist.push(book);
+            const localWishValue = JSON.stringify(savedWishlist);
+            localStorage.setItem("wishlist",localWishValue);
+            toast.success("Book Added To Wishlist Successfully")
+          }         
+      }
+    };
+    
   return (
     <div>
       <div className="card lg:card-side bg-base-100 shadow-xl ">
@@ -20,7 +53,7 @@ const BookDetails = () => {
             className="rounded-xl w-[425px]"
           />
         </figure>
-        <div className="card-body w-1/2">
+        <div className="card-body lg:w-1/2">
             <h1 className="font-playfair-display text-5xl mb-4">{book.bookName} </h1>            
             <h1 className="text-xl">By: {book.author} </h1>
             <hr className="border-t-2 border-solid"></hr>
@@ -59,8 +92,8 @@ const BookDetails = () => {
 </div>
 
           <div className="card-actions">
-            <button onClick={notify} className="btn btn-primary">Read</button>
-            <button className="btn btn-primary">Wish</button>
+            <button onClick={handleData} className="btn ">Read</button>
+            <button onClick={handleWishlist} className="btn bg-[#50B1C9]">Wishlist</button>
           </div>
         </div>
       </div>

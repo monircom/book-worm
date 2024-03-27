@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 
@@ -5,6 +6,22 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const List = () => {
+
+  const [readData, setReadData] = useState ([]);
+  const [wishData, setWishData] = useState ([]);
+  
+  console.log(readData);
+  console.log(wishData);
+  useEffect(()=>{
+    const getReadData = JSON.parse(localStorage.getItem("reads")) || [];
+    setReadData(getReadData);
+  },[]);
+
+  useEffect(()=>{
+    const getWishData = JSON.parse(localStorage.getItem("wishlist")) || [];
+    setWishData(getWishData);
+  },[])
+
   return (
     <div>
       <div className="w-full h-[100px] bg-[rgba(19,19,19,0.05)] rounded-xl flex justify-center items-center">
@@ -34,10 +51,10 @@ const List = () => {
         </TabList>
 
         <TabPanel>
-        <h2>Read Books</h2>
+        <h2>{readData.length}</h2>
         </TabPanel>
         <TabPanel>
-        <h2>Wishlist Books</h2>
+        <h2>{wishData.length}</h2>
         </TabPanel>
     </Tabs>
       </div>
