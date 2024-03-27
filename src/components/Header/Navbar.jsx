@@ -1,25 +1,44 @@
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
-
- const links = <>
-        <li>
-            <NavLink to="/">Home</NavLink>
-          </li>
-          <li>
-          <NavLink to="/list">Listed Books</NavLink>          
-          </li>
-          <li>
-          <NavLink to="/read">Pages To Read</NavLink>              
-          </li>
-          <li>
-          <NavLink to="/newbooks">Coming Soon</NavLink>             
-          </li>
-          <li>
-          <NavLink to="/about">About</NavLink>  
-          </li>
- 
- </>
+  const links = (
+    <>
+      <li>
+        <NavLink to="/"
+        className={({ isActive }) =>
+        isActive ? "active btn btn-outline btn-success mr-2" : "btn btn-ghost mr-2"
+      }
+        >Home</NavLink>
+      </li>
+      <li>
+        <NavLink to="/list"
+        className={({ isActive }) =>
+        isActive ? "active btn btn-outline btn-success mr-2" : "btn btn-ghost mr-2"
+      }
+      >Listed Books</NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/read"
+          className={({ isActive }) =>
+            isActive ? "active btn btn-outline btn-success mr-2" : "btn btn-ghost mr-2"
+          }
+        >
+          Pages To Read
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="/newbooks" className={({ isActive }) =>
+            isActive ? "active btn btn-outline btn-success mr-2" : "btn btn-ghost mr-2"
+          }>Coming Soon</NavLink>
+      </li>
+      <li>
+        <NavLink to="/about" className={({ isActive }) =>
+            isActive ? "active btn btn-outline btn-success mr-2" : "btn btn-ghost mr-2"
+          }>About</NavLink>
+      </li>
+    </>
+  );
 
   return (
     <div className="navbar bg-base-100 container mx-auto mb-20">
@@ -51,13 +70,15 @@ const Navbar = () => {
         <a className="btn btn-ghost text-xl">Book Worm</a>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          {links}
-        </ul>
+        <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Sign In</a>
-        <a className="btn">Sign Up</a>
+        <button className="btn bg-[#23BE0A] text-white lg:text-xl px-5 rounded-lg mr-4">
+          Sign In
+        </button>
+        <button className="btn bg-[#59C6D2] text-white lg:text-xl px-5 rounded-lg">
+          Sign Up
+        </button>
       </div>
     </div>
   );
