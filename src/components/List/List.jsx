@@ -87,7 +87,7 @@ const List = () => {
             <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
                 <li onClick={() => handleBooksSorting("rating")}><a>Rating</a></li>
                 <li onClick={() => handleBooksSorting("page")}><a>Number of Pages</a></li>
-                <li onClick={() => handleBooksSorting("year")}><a>Publisher Year</a></li>
+                <li onClick={() => handleBooksSorting("year")}><a>Published year</a></li>
                
             
             </ul>
