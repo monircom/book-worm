@@ -93,10 +93,6 @@ const List = () => {
             </ul>
             </div>
       </div>
-
-
-
-
       <div>
       <Tabs>
         <TabList>
@@ -121,11 +117,7 @@ const List = () => {
         </div>
         </TabPanel>
     </Tabs>
-      </div>
-           
-       
-      
-      <ToastContainer />
+      </div>        
     </div>
   );
 };

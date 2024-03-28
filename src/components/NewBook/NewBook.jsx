@@ -1,12 +1,10 @@
 import PropTypes from "prop-types";
-import { NavLink } from "react-router-dom";
 
-const Book = ({ book }) => {
+const NewBook = ({ book }) => {
   console.log(book)
     const {tags} = book;
   return (
-    <div>
-        <NavLink to={`/book/${book.bookId}`}>
+    <div>        
       <div className="card w-full  h-full bg-base-100 shadow-xl border-2">
         <figure className="px-10 py-10 rounded-xl bg-gray-300 m-5">
           <img src={book.image} alt="Shoes" className="w-[130px] rounded-xl" />
@@ -30,16 +28,13 @@ const Book = ({ book }) => {
                 <p>{book.rating}</p>
                 <img  src="./images/star.png" alt="" className="hover:cursor-pointer" />
             </div>
-
         </div>
-        </div>
-        
-      </div>
-      </NavLink>
+        </div>        
+      </div>      
     </div>
   );
 };
-Book.propTypes = {
+NewBook.propTypes = {
   book: PropTypes.object,
 };
-export default Book;
+export default NewBook;

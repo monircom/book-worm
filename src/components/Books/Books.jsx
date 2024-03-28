@@ -9,9 +9,7 @@ const Books = () => {
         fetch("books.json")
           .then((res) => res.json())
           .then((data) => setBooks(data));          
-      }, []);
-
-      console.log(books);
+      }, []);      
 
     return (
         <div>  
