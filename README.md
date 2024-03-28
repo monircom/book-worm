@@ -1,8 +1,15 @@
-# React + Vite
+# Assignment 08
+# Book Worm
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Features
 
-Currently, two official plugins are available:
+- Display List of Books
+- User can add Books to WishList
+- User can add Books Read List
+- Read List Books can be shown through Chart
+- Shows List of Coming Soon Books
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+live link :
+- Netlify :  https://assignment-08-book-worm.netlify.app/
+- Surge   :  https://assignment-08-book-worm.surge.sh/
