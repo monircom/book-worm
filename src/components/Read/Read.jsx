@@ -15,7 +15,9 @@ const Read = () => {
 
   const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
 
-const data = [...readData]
+
+const data = [...readData] || [];
+
 
 const getPath = (x, y, width, height) => {
   return `M${x},${y + height}C${x + width / 3},${y + height} ${x + width / 2},${y + height / 3}
@@ -35,7 +37,7 @@ function CustomTooltip({ payload, label, active }) {
     return (
       <div className="custom-tooltip">
         <p className="label">{`${label}`}</p>
-        <p className="label">Page: {` ${payload[0].value}`}</p>
+        <p className="label">Page: {` ${payload[0]?.value}`}</p>
       </div>
     );
   }
@@ -44,7 +46,8 @@ function CustomTooltip({ payload, label, active }) {
 }
 
     return (
-        <div className='bg-base-200 rounded-lg py-10' style={{ width: '100%', height: 700 }}> 
+        <div>          
+        <div className='bg-base-200 rounded-lg py-10' style={{ width: '100%', height: 700 }}>           
             <ResponsiveContainer>
             <BarChart
                 width={1000}
@@ -69,7 +72,8 @@ function CustomTooltip({ payload, label, active }) {
                 
               </BarChart>
               </ResponsiveContainer>
-                  </div>
+          </div>
+          </div>
               );
   };
 
