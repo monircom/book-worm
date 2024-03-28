@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 
-const NewBook = ({ book }) => {
-  console.log(book)
+const NewBook = ({ book }) => {  
     const {tags} = book;
   return (
     <div>        

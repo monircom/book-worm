@@ -1,8 +1,7 @@
 import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
 
-const Book = ({ book }) => {
-  console.log(book)
+const Book = ({ book }) => {  
     const {tags} = book;
   return (
     <div>

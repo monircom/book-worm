@@ -2,23 +2,6 @@
 import { useEffect, useState } from 'react';
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, ResponsiveContainer, Tooltip } from 'recharts';
 
-
-const Read = () => {
-
-  const [readData, setReadData] = useState ([]); 
-
-  useEffect(()=>{
-    const getReadData = JSON.parse(localStorage.getItem("reads")) || [];
-    setReadData(getReadData);
-  },[]);
-
-
-  const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink','#FBB929','#FC8042','#0085F6'];
-
-
-const data = [...readData] || [];
-
-
 const getPath = (x, y, width, height) => {
   return `M${x},${y + height}C${x + width / 3},${y + height} ${x + width / 2},${y + height / 3}
   ${x + width / 2}, ${y}
@@ -44,6 +27,24 @@ function CustomTooltip({ payload, label, active }) {
 
   return null;
 }
+
+const Read = () => {
+
+  const [readData, setReadData] = useState ([]); 
+
+  useEffect(()=>{
+    const getReadData = JSON.parse(localStorage.getItem("reads")) || [];
+    setReadData(getReadData);
+  },[]);
+
+
+  const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink','#FBB929','#FC8042','#0085F6'];
+
+
+const data = [...readData] || [];
+
+
+
 
     return (
         <div>          
