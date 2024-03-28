@@ -13,7 +13,7 @@ const Read = () => {
   },[]);
 
 
-  const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
+  const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink','#FBB929','#FC8042','#0085F6'];
 
 
 const data = [...readData] || [];
