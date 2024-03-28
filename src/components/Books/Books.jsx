@@ -14,7 +14,10 @@ const Books = () => {
       console.log(books);
 
     return (
-        <div>        
+        <div>  
+          <div className="flex items-center justify-center mt-[100px] mb-9">
+          <h1 className="text-5xl font-bold font-playfair-display">Books</h1>    
+          </div>  
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-7">
           {books.map((book, idx) => (
             <Book key={idx} book={book}></Book>
