@@ -12,7 +12,7 @@ const BookCard = ({book}) => {
             className="rounded-lg shadow-2xl w-[130px]"
           />
           </div>
-          <div className="m-6">
+          <div className="m-6 grow-1">
             <h1 className="font-playfair-display text-2xl font-bold mb-4">{book.bookName}</h1>
             <h1 className="mb-4">By : {book.author}</h1>
           <div className="flex flex-col lg:flex-row gap-5 mb-4">

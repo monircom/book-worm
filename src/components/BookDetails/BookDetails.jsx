@@ -92,8 +92,8 @@ const BookDetails = () => {
 </div>
 
           <div className="card-actions">
-            <button onClick={handleData} className="btn ">Read</button>
-            <button onClick={handleWishlist} className="btn bg-[#50B1C9]">Wishlist</button>
+            <button onClick={handleData} className="btn bg-[#23BE0A] text-white ">Read</button>
+            <button onClick={handleWishlist} className="btn bg-[#50B1C9] text-white">Wishlist</button>
           </div>
         </div>
       </div>
