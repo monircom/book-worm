@@ -2,8 +2,6 @@ import { useEffect, useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import BookCard from '../BookCard/BookCard';
 
 const List = () => {
@@ -11,8 +9,7 @@ const List = () => {
   const [readData, setReadData] = useState ([]);
   const [wishData, setWishData] = useState ([]);
   
-  console.log(readData);
-  console.log(wishData);
+  
   useEffect(()=>{
     const getReadData = JSON.parse(localStorage.getItem("reads")) || [];
     setReadData(getReadData);
