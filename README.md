@@ -1,4 +1,4 @@
-# Assignment 08
+
 # Book Worm
 
 ## Features
