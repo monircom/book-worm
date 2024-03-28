@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from 'react';
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, ResponsiveContainer, Tooltip } from 'recharts';
 
 
 const Read = () => {
@@ -30,33 +30,47 @@ const TriangleBar = (props) => {
   return <path d={getPath(x, y, width, height)} stroke="none" fill={fill} />;
 };
 
+function CustomTooltip({ payload, label, active }) {
+  if (active) {
+    return (
+      <div className="custom-tooltip">
+        <p className="label">{`${label}`}</p>
+        <p className="label">Page: {` ${payload[0].value}`}</p>
+      </div>
+    );
+  }
+
+  return null;
+}
 
     return (
         <div className='bg-base-200 rounded-lg py-10' style={{ width: '100%', height: 700 }}> 
             <ResponsiveContainer>
             <BarChart
-      width={1000}
-      height={500}
-      data={data}
-      margin={{
-        top: 20,
-        right: 30,
-        left: 20,
-        bottom: 5,
-      }}
-    >
-      <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="bookName" />
-      <YAxis />
-      <Bar dataKey="totalPages" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top' }}>
-        {data.map((entry, index) => (
-          <Cell key={`cell-${index}`} fill={colors[index % 20]} />
-        ))}
-      </Bar>
-    </BarChart>
-    </ResponsiveContainer>
-        </div>
-    );
-};
+                width={1000}
+                height={500}
+                data={data}
+                margin={{
+                  top: 20,
+                  right: 30,
+                  left: 20,
+                  bottom: 5,
+                }}
+                >
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="bookName" />
+                <YAxis />
+                <Tooltip content={<CustomTooltip />} wrapperStyle={{ backgroundColor: '#ccc' }}/>
+                <Bar dataKey="totalPages" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top' }}>
+                  {data.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={colors[index % 20]} />
+                  ))}
+                </Bar>
+                
+              </BarChart>
+              </ResponsiveContainer>
+                  </div>
+              );
+  };
 
 export default Read;
